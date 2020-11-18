@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Jacob B](https://up.htmlacademy.ru/adaptive/21/user/1253785).
-* Наставник: `Владислав 😎 Ермолаев`.
+* Наставник:[Владислав 😎 Ермолаев](https://htmlacademy.ru/profile/id128353).
 
 ---
 
