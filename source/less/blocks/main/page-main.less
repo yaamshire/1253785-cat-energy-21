@@ -1,18 +1,46 @@
 /* Главная страница */
 .page-main {
   height: 100%;
-  font-size: 16px;
-  font-family: "Oswald-regular", "Arial", sans-serif;
-  line-height: 24px;
 }
 
-.page__body {
+.promo {
+  color: @white;
+  text-align: center;
+}
+
+.promo__wrap {
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
-  min-width: 320px;
-  min-height: 100%;
-  margin: 0;
-  background-color: @white;
-  color: @special-dark-grey;
+  .debug ();
+}
+
+.promo__header {
+  background-image: url("/source/img/index-background-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: fade(@basic-green,85%);
+  padding: 27px 35px 25px 35px;
+}
+
+.promo__header-title {
+  .font-s-h(36px,36px);
+}
+
+.promo__header-slogan {
+  text-transform: uppercase;
+  .font-s-h(14px,14px);
+}
+
+.promo__image {
+  width: 100%;
+}
+
+.promo__button {
+  margin: 5px 20px;
+  max-width: 280px;
+}
+
+.promo__button-form {
+  width: 280px;
+  height: 40px;
+  padding: 8px 44px;
 }

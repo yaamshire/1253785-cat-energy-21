@@ -1,3 +1,34 @@
 .tocat {
   background-color: @white;
 }
+
+.tocat__wrap {
+  padding: 20px;
+}
+
+.tocat__list {
+  display: grid;
+}
+
+.tocat__item {
+  background-color: @basic-grey;
+  padding: 30px 20px;
+}
+.tocat__item--slim {
+  background-image: url(/source/img/index/slim-cat.svg);
+}
+
+.tocat__item--pro {
+  background-image: url(/source/img/index/pro-cat.svg);
+}
+
+.tocat__item-title {
+  text-transform: uppercase;
+  .font-s-h(24px;37px);
+  color: @black;
+}
+
+.tocat__item-link {
+  border-top: 1px solid @grey-2;
+  padding: 20px;
+}
