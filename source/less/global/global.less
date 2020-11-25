@@ -20,10 +20,14 @@ img {
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
-  font-family: "Oswald-regular", "Arial", sans-serif;
+  .oswald();
+  .font-s-h(16px;20px);
   border: 0;
   background-color: @basic-green;
   color: @white;
+  width: 280px;
+  height: 40px;
+  padding: 8px 44px;
   &:hover {
     background-color: @basic-green-2;
   }
@@ -32,3 +36,22 @@ img {
   }
 }
 
+.grey-button {
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  .oswald();
+  .font-s-h(16px;20px);
+  color: @dark-grey-1;
+  border: 0;
+  background-color: @basic-grey;
+  width: 280px;
+  height: 60px;
+  padding: 8px 44px;
+  &:hover {
+    background-color: @grey-1;
+  }
+  &:focus {
+    color: fade(@dark-grey-1, 30%);
+  }
+}
