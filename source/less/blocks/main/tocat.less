@@ -20,19 +20,19 @@
 .tocat__item-icon {
   border: 25px solid @basic-green;
   border-radius: 50%;
-  width: 0px;
-  height: 0px;
+  width: 1px;
+  height: 1px;
   display: inline-block;
 }
 
 .tocat__item--slim {
-  background-image: url(/source/img/index/slim-cat.svg);
+  background-image: url("/source/img/index/slim-cat.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .tocat__item--pro {
-  background-image: url(/source/img/index/pro-cat.svg);
+  background-image: url("/source/img/index/pro-cat.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -63,9 +63,11 @@
   border: 0;
   background-color: transparent;
   color: @black;
+
   &:hover {
     background-color: @grey-1;
   }
+
   &:focus {
     color: fade(@black, 30%);
   }
@@ -77,24 +79,24 @@
   display: inline-block;
   margin-bottom: 7px;
 }
-  .arrow:before,
-  .arrow:after {
-    content: "";
-    display: block;
-    position: absolute;
-    border: 6px solid transparent;
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 6px solid transparent;
 }
 
 .arrow:nth-child(2) {
   width: 18px;
   height: 2px;
   background: @black;
-  }
+}
 
-  .arrow:nth-child(2):after {
-    border-width: 6px 0 6px 9px;
-    margin-left: 18px;
-    margin-top: -5px;
-    border-left-color: @black;
-  }
-
+.arrow:nth-child(2)::after {
+  border-width: 6px 0 6px 9px;
+  margin-left: 18px;
+  margin-top: -5px;
+  border-left-color: @black;
+}
