@@ -1,0 +1,49 @@
+.page-header {
+  padding: 0 20px;
+  height: 66px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: @white;
+  color: @black;
+  margin: 0;
+
+  @media (min-width: @desktop-width) {
+    color: @white;
+    max-width: 80%;
+    background-color: @basic-green;
+  }
+}
+
+.page-header a {
+  text-decoration: none;
+}
+
+.header-logo {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 43px;
+  align-self: flex-start;
+}
+
+.header-logo__image {
+  height: 38px;
+  width: auto;
+}
+
+.header-logo__name {
+  height: 18px;
+  width: auto;
+
+  @media (min-width: @tablet-width) {
+    height: 18px;
+  }
+
+  @media (min-width: @desktop-width) {
+    height: 20px;
+  }
+}
+
+@import "main-nav.less";

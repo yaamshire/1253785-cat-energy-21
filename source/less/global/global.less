@@ -1,0 +1,58 @@
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.green-button {
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  .oswald();
+  .font-s-h(16px;20px);
+  border: 0;
+  background-color: @basic-green;
+  color: @white;
+  width: 280px;
+  height: 40px;
+  padding: 8px 44px;
+
+  &:hover {
+    background-color: @basic-green-2;
+  }
+
+  &:focus {
+    color: fade(@white, 30%);
+  }
+}
+
+.grey-button {
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  .oswald();
+  .font-s-h(16px;20px);
+  color: @dark-grey-1;
+  border: 0;
+  background-color: @basic-grey;
+  width: 280px;
+  height: 60px;
+  padding: 8px 44px;
+
+  &:hover {
+    background-color: @grey-1;
+  }
+
+  &:focus {
+    color: fade(@dark-grey-1, 30%);
+  }
+}

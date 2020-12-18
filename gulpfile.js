@@ -5,6 +5,7 @@ const less = require("gulp-less");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const sync = require("browser-sync").create();
+const del = require("del");
 
 // Styles
 
@@ -14,7 +15,7 @@ const styles = () => {
     .pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer({ overrideBrowserslist: ['last 10 versions'], cascade: false, grid: true })
     ]))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("source/css"))
