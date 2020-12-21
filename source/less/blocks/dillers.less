@@ -18,8 +18,10 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 140px auto 140px;
+  background-color: @basic-grey;
 
   @media (min-width: @desktop-width) {
+    .debug(@b-color:darkblue);
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
@@ -27,6 +29,7 @@
     align-items: center;
     margin-left: 110px;
     width: 570px;
+    background-color: @white;
   }
 }
 
