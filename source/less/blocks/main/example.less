@@ -1,0 +1,91 @@
+.example {
+  background-color: @basic-grey;
+  .debug();
+}
+
+.example__wrap {
+  padding: 0 20px;
+}
+
+.example__header {
+  padding-top: 27px;
+}
+
+.example__header-title {
+  .font-s-h(36px,40px);
+  font-family: "Oswald-regular", "Arial", sans-serif;
+  color: @black;
+  margin-bottom: 33px;
+  margin-top: 0;
+}
+
+.example__header-subtitle {
+  margin-bottom: 25px;
+}
+
+.info__blocks-border-wrap {
+  border: 1px solid @grey-2;
+  width: 124px;
+  height: 56px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.info__blocks-border-wrap--inner {
+  .font-s-h(24px;24px);
+  color: @black;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Oswald-regular", "Arial", sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+.info__text {
+  .font-s-h(14px;20px);
+  font-family: "Oswald-regular", "Arial", sans-serif;
+  font-weight: bold;
+  color: @black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.info__text-text,
+.info__text-num {
+  display: inline-block;
+  margin: 27px 0 0 0;
+}
+
+.example__slider {
+  margin-top: 40px;
+}
+
+.slider__list {
+  display: grid;
+  margin-bottom: 20px;
+}
+
+.slider__item {
+  padding: 5px;
+  text-align: center;
+}
+
+.slider__item-image {
+  width: 100%;
+  background-image: url("/source/img/before-mobile.png");
+}
+
+.slider__control {
+  .font-s-h(16px;20px);
+  font-family: "Oswald-regular", "Arial", sans-serif;
+  font-weight: bold;
+  color: @black;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 31px;
+}
+
+.slider__input-range {
+  margin: 5px 12px 5px 12px;
+}
