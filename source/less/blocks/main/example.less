@@ -1,26 +1,71 @@
 .example {
   background-color: @basic-grey;
-  .debug();
 }
 
 .example__wrap {
-  padding: 0 20px;
+  @media (min-width: @desktop-width) {
+    background-color: @white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
 
 .example__header {
   padding-top: 27px;
+
+  @media (min-width: @tablet-width) {
+    background-color: @white;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
 }
+
 
 .example__header-title {
   .font-s-h(36px,40px);
   font-family: "Oswald-regular", "Arial", sans-serif;
   color: @black;
-  margin-bottom: 33px;
-  margin-top: 0;
+  margin: 0;
 }
 
 .example__header-subtitle {
   margin-bottom: 25px;
+}
+
+.example__info {
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: @white;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-color: @basic-grey;
+    justify-content: space-around;
+  }
+}
+
+.info__blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  @media (min-width: @tablet-width) {
+    gap: 42px;
+  }
 }
 
 .info__blocks-border-wrap {
@@ -29,7 +74,6 @@
   height: 56px;
   border-radius: 3px;
   box-sizing: border-box;
-  display: inline-block;
 }
 
 .info__blocks-border-wrap--inner {
@@ -49,16 +93,34 @@
   color: @black;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: @tablet-width) {
+    text-align: right;
+    align-self: center;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: stretch;
+  }
 }
 
 .info__text-text,
 .info__text-num {
-  display: inline-block;
-  margin: 27px 0 0 0;
+  margin: 0;
 }
 
 .example__slider {
-  margin-top: 40px;
+  background-color: @basic-grey;
+
+  @media (min-width: @desktop-width) {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: -1;
+  }
 }
 
 .slider__list {
@@ -73,7 +135,7 @@
 
 .slider__item-image {
   width: 100%;
-  background-image: url("/source/img/before-mobile.png");
+  background-image: url("/img/before-mobile.png");
 }
 
 .slider__control {

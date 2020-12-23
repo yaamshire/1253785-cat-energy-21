@@ -15,7 +15,7 @@ const styles = () => {
     .pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
-      autoprefixer({ browsers: ['last 10 versions'], cascade: false, grid: true })
+      autoprefixer({ overrideBrowserslist: ['last 10 versions'], cascade: false, grid: true })
     ]))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("source/css"))

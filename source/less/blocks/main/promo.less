@@ -1,4 +1,94 @@
 .promo {
   background-color: @white;
   font-size: 25px;
+  color: @white;
+  text-align: center;
+}
+
+.promo__header-title {
+  .font-s-h(36px,36px);
+}
+
+.promo__header-slogan {
+  text-transform: uppercase;
+  .font-s-h(14px,14px);
+}
+
+
+.promo__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 40px;
+
+  @media (min-width: @tablet-width) {
+    grid-template-rows: 1fr 40px 1fr;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 3fr;
+  }
+}
+
+.promo__header {
+  background-image: url("/img/index-background-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 27px 35px 25px 35px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: 1;
+
+  @media (min-width: @tablet-width) {
+    text-align: left;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+.promo__button {
+  min-width: 280px;
+  grid-row: 3;
+  justify-self: center;
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  @media (min-width: @tablet-width) {
+    justify-self: self-start;
+    grid-row: 2;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+.promo__image {
+  width: 100%;
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  @media (min-width: @tablet-width) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-row-start: 1;
+    grid-row-end: -1;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    justify-self: center;
+    justify-items: center;
+  }
 }

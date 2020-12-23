@@ -1,10 +1,22 @@
 .footer {
   background-color: @basic-grey;
-  .debug ();
 }
 
 .footer__wrap {
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0 100px;
+  }
 }
 
 .footer__name {

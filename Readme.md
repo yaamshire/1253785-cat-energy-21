@@ -58,3 +58,11 @@ git clone SSH-адрес_вашего_форка
 [travis-url]: https://travis-ci.com/htmlacademy-adaptive/1253785-cat-energy-21
 [dependency-image]: https://david-dm.org/htmlacademy-adaptive/1253785-cat-energy-21/dev-status.svg?style=flat-square
 [dependency-url]: https://david-dm.org/htmlacademy-adaptive/1253785-cat-energy-21?type=dev
+
+
+#### 5. Вопросы к наставнику: 
+
+1. Картинка на главной под зеленым наложением - как правильно сделать?
+2. Надо ли в логотоипе (меню) подвбирать размер до пикселя ?
+3. Картинка кота в кружочке как лучше масштабировать?
+
