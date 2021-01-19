@@ -11,12 +11,26 @@
   overflow: hidden;
 }
 
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: @tablet-width) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0 110px;
+  }
+}
+
 .green-button {
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
   .oswald();
-  .font-s-h(16px;20px);
+  .font-s-h(14px;18px);
   border: 0;
   background-color: @basic-green;
   color: @white;
