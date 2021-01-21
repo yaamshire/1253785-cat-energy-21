@@ -3,36 +3,122 @@
 }
 
 .footer__wrap {
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 30px;
-  }
-
-  @media (min-width: @desktop-width) {
-    padding: 0 100px;
+    padding: 60px 0;
+    align-items: center;
   }
 }
 
-.footer__name {
+.footer__logo {
   border-bottom: 1px solid @grey-2;
-  padding: 25px 30px;
+  padding: 30px 20px;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
+.footer__logo:hover {
+  opacity: 0.8;
+}
+
+.footer__logo:active {
+  opacity: 0.3;
 }
 
 .footer__social {
   border-bottom: 1px solid @grey-2;
-  padding: 25px 30px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+  justify-content: center;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    border-bottom: none;
+    column-gap: 27px;
+  }
 }
 
 .footer__social-item {
   color: @grey-2;
 }
 
+.footer__social-item:not(:last-child) {
+  margin-right: 24px;
+
+  @media (min-width: @tablet-width) {
+    margin-right: 27px;
+  }
+}
+
+.footer__social-item img {
+  height: 100%;
+}
+
+.footer__social-item svg {
+  fill: @grey-3;
+}
+
+.footer__social .footer__social-item:last-child svg {
+  fill: none;
+  stroke: @grey-3;
+}
+
+.footer__social .footer__social-item:last-child:hover svg {
+  stroke: @basic-green;
+}
+
+.footer__social-item:hover svg {
+  fill: @basic-green;
+}
+
+.footer__social-item:active {
+  opacity: 0.3;
+}
+
+.footer__logo-academy {
+  padding: 25px 0;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    border-bottom: none;
+    width: 163px;
+  }
+}
+
 .logo-academy {
-  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  color: @dark-grey-1;
+
+  @media (min-width: @tablet-width) {
+    .font-s-h(16px;18px);
+  }
+}
+
+.logo-academy span {
+  align-self: center;
+}
+
+.logo-academy svg {
+  height: 34px;
+  width: auto;
+  fill: @grey-3;
+}
+
+.logo-academy:hover svg {
+  fill: @basic-green;
+}
+
+.logo-academy:active {
+  opacity: 0.3;
 }

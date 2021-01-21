@@ -1,7 +1,10 @@
+@import "green-line.less";
+
 .form-group {
   background-color: @white;
   color: @dark-grey-1;
   margin: 0;
+  padding: 0;
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -11,27 +14,16 @@
 }
 
 .form-group input,
-textarea,
-fieldset,
-label {
+.form-group textarea,
+.form-group fieldset,
+.form-group label {
   text-transform: uppercase;
   .oswald();
   padding: 0;
 
   @media (min-width: @tablet-width) {
-    font-size: 20px;
-    line-height: 30px;
+    .font-s-h(20px;30px);
   }
-}
-
-.form-group textarea {
-  @media (min-width: @desktop-width) {
-    width: 100%;
-  }
-}
-
-.form-group input {
-  flex-grow: 1;
 }
 
 .form-group__title {
@@ -39,16 +31,22 @@ label {
   text-transform: none;
   color: @black;
   margin-bottom: 34px;
+  position: relative;
+
+  @media (min-width: @tablet-width) {
+    .font-s-h(36px;36px);
+    margin-bottom: 75px;
+  }
 }
 
 .form-group__label {
-  margin-right: 10px;
+  .font-s-h(16px;18px);
+  margin-right: 15px;
   align-self: center;
 }
 
 /* Группа инпутов Имя */
 .text-group {
-
   flex-direction: column;
   flex-wrap: nowrap;
 }
@@ -57,6 +55,7 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  position: relative;
 
   @media (min-width: @tablet-width) {
     width: 630px;
@@ -68,11 +67,25 @@ label {
   }
 }
 
-.form-group__input--text {
+.text-group__field:not(:last-child) {
+  margin-bottom: 14px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+input.form-group__input--text {
   .font-s-h(16px;18px);
-  padding: 15px auto 15px 15px;
   color: @dark-grey-1;
-  border: 1px solid @grey-2;
+  border: 1px solid #e7e7e7;
+  flex-grow: 1;
+  height: 46px;
+  padding: 15px;
+
+  @media (min-width: @tablet-width) {
+    height: 52px;
+  }
 }
 
 .text-group > .form-group > .text-group__field {
@@ -81,8 +94,8 @@ label {
   }
 }
 
-.text-group > .form-group > .text-group__field:nth-child(-n+2) {
-  margin-bottom: 10px;
+.form-group > .text-group__field:nth-child(-n+2):not("textarea") {
+  margin-bottom: 16px;
 
   @media (min-width: @tablet-width) {
     margin-bottom: 20px;
@@ -96,32 +109,75 @@ label {
   border-right: none;
   border-bottom: 1px solid @grey-2;
   border-top: 1px solid @grey-2;
-  padding-right: 0;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-left: 20px;
   height: auto;
+  margin: 0 -20px;
+  padding: 22px 20px;
 
   @media (min-width: @tablet-width) {
     border-left: 1px solid @grey-2;
     border-right: 1px solid @grey-2;
-    max-width: 610px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   @media (min-width: @desktop-width) {
     grid-column-start: 2;
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
-.radio-group input[type="radio"] {
+.radio-group > .form-group {
+  @media (min-width: @tablet-width) {
+    padding: 28px;
+  }
+}
+
+.radio-group .input-radio:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.input-radio label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.input-radio input[type="radio"] {
+  display: none;
+}
+
+.input-radio label::before {
+  border: 1px solid @grey-2;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  content: "";
+  display: inline-block;
+  flex: none;
+  margin-right: 16px;
+}
+
+.input-radio input[type="radio"]:focus {
+  outline-offset: 0;
+  outline: 0;
+}
+
+.input-radio label::after {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+  position: absolute;
+  content: none;
   background-color: @basic-green;
 }
 
-.form-group__input--radio {
-  background-color: @basic-green;
-  margin: 0 0 12px 0;
+.input-radio input[type="radio"]:checked + label::after {
+  content: "";
 }
 
 /* Группа инпутов контактные данные  */
@@ -133,6 +189,7 @@ label {
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
+    padding-top: 75px;
   }
 }
 
@@ -145,11 +202,48 @@ label {
   }
 }
 
+.form-contact .text-group__field {
+  @media (min-width: @desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+input[type="email"].form-group__input--text.with-icon::after {
+  content: "After";
+  display: block;
+  width: 20px;
+  height: 14px;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: red;
+}
+
+.svg-icon {
+  position: absolute;
+  width: 20px;
+  right: 12px;
+  top: 14px;
+  fill: #8a7878;
+  transition: fill 0.1s linear;
+}
+
+use.svg-use__email svg line {
+  fill: #fdc646;
+  stroke: #ec2323;
+}
+
+svg path {
+  stroke: inherit;
+  fill: inherit;
+}
+
 /* Группа инпутов комментарии */
 .form-comment {
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
+    padding: 75px 0;
   }
 }
 
@@ -159,23 +253,38 @@ label {
   }
 }
 
+.form-group textarea {
+  padding: 10px 15px;
+  .font-s-h(16px;18px);
+
+  @media (min-width: @desktop-width) {
+    width: 100%;
+    padding: 10px 20px;
+    .font-s-h(20px;30px);
+  }
+}
 
 .form-group__textarea {
   resize: none;
   width: 100%;
   min-height: 150px;
   border-color: @grey-2;
+
+  @media (min-width: @tablet-width) {
+    height: 174px;
+  }
 }
 
 .form-comment textarea::placeholder {
   color: @dark-grey-1;
 }
 
-/* Группа инпутов комментарии */
+/* Группа инпутов CHECKBOX  Дополнительно*/
 .form-addition {
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
+    padding-bottom: 60px;
   }
 }
 
@@ -191,20 +300,99 @@ label {
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
-    flex-direction: row;
     flex-wrap: nowrap;
   }
 }
 
-.form-addition > .form-group > .checkbox-group__field {
+.form-group__wrap {
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 125px;
+    row-gap: 32px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+  }
+}
+
+.checkbox-group__field {
   @media (min-width: @tablet-width) {
     width: 50%;
   }
 }
 
+.input-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.input-checkbox label {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-checkbox label::before {
+  border: 1px solid @grey-2;
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  display: inline-block;
+  content: "";
+  top: 3px;
+  margin-right: 16px;
+}
+
+.input-checkbox label:hover::before,
+.input-radio label:hover::before {
+  border-color: #bababa;
+}
+
+.input-checkbox input[type="checkbox"]:disabled + label,
+.input-radio input[type="radio"]:disabled + label {
+  opacity: 0.3;
+  user-select: none;
+}
+
+.input-checkbox label::after {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 15px;
+  border-left: 2px solid @basic-green;
+  border-bottom: 2px solid @basic-green;
+  transform: rotate(-45deg);
+  left: 7px;
+  top: 7px;
+  position: absolute;
+}
+
+.input-checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.input-checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.input-checkbox input[type="checkbox"] {
+  opacity: 0;
+  display: none;
+}
+
+.input-checkbox input[type="checkbox"]:focus {
+  outline: none;
+}
+
 /* Группа конец формы кнопка */
 .page-form__footer {
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
 
@@ -212,13 +400,14 @@ label {
     flex-direction: row;
     justify-content: flex-start;
     column-gap: 60px;
+    padding: 24px 40px 75px 40px;
   }
 
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
     column-gap: 80px;
-    padding: 0 110px;
+    padding: 0;
   }
 }
 
@@ -226,8 +415,18 @@ label {
   width: 280px;
   height: 40px;
   padding: 8px 44px;
+
+  @media (min-width: @desktop-width) {
+    width: 570px;
+  }
 }
 
-.page-form__footer > p {
+.page-form__footer-legend {
   align-self: center;
+  margin-top: 21px;
+  margin-bottom: 32px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+  }
 }
