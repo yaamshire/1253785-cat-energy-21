@@ -1,32 +1,47 @@
 .howit {
   background-color: @white;
-}
+  counter-reset: section;
 
-.howit__wrap {
-  padding-bottom: 40px;
-
-  @media (min-width: @desktop-width) {
-    margin: auto;
+  @media (min-width: @tablet-width) {
+    margin-bottom: 60px;
   }
 
   @media (min-width: @desktop-width) {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.howit__wrap {
+  padding-bottom: 42px;
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 60px;
+    margin: auto;
   }
 }
 
 .howit__header {
-  padding: 40px 0;
+  margin-bottom: 35px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 70px;
+  }
 
   @media (min-width: @desktop-width) {
-    padding: 70px 0;
+    padding: 0;
   }
 }
 
-h2.howit__header-title {
+.howit__header-title {
+  .oswald();
   .font-s-h(36px,40px);
-  font-family: "Oswald-regular", "Arial", sans-serif;
+  font-weight: 200;
   color: @black;
   margin: 0;
+
+  @media (min-width: @tablet-width) {
+    .font-s-h(60px,60px);
+  }
 
   @media (min-width: @desktop-width) {
     .font-s-h(60px,60px);
@@ -41,15 +56,15 @@ h2.howit__header-title {
 
   @media (min-width: @tablet-width) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(324px, 540px));
+    grid-template-columns: repeat(2, 245px);
     grid-template-rows: repeat(2, 227px);
-    column-gap: 60px;
+    column-gap: 140px;
     row-gap: 90px;
   }
 
   @media (min-width: @desktop-width) {
-    grid-template-rows: repeat(1, 245px);
-    grid-template-columns: repeat(4, 226px);
+    grid-template-rows: repeat(1, 226px);
+    grid-template-columns: repeat(4, 245px);
     column-gap: 80px;
   }
 }
@@ -57,15 +72,32 @@ h2.howit__header-title {
 .howit__item {
   display: flex;
   column-gap: 20px;
+  position: relative;
+
+  &::after {
+    display: none;
+  }
 
   @media (min-width: @tablet-width) {
     flex-direction: column;
     gap: 37px;
-    padding-right: 120px;
+
+    &::after {
+      counter-increment: section;
+      content: counter(section);
+      display: block;
+      position: absolute;
+      opacity: 0.1;
+      top: -41px;
+      bottom: 0;
+      right: -4px;
+      .font-s-h(280px,280px);
+      .oswald();
+    }
   }
 
   @media (min-width: @desktop-width) {
-    padding-right: 44px;
+    padding-right: 0;
   }
 }
 
@@ -102,22 +134,10 @@ h2.howit__header-title {
   background-image: url("/img/icons/icon_alarm.svg");
 }
 
-@media (min-width: @tablet-width) {
-  .howit__item[data-id]::before {
-    display: block;
-    position: absolute;
-    opacity: 0.1;
-    line-height: 280px;
-    font-size: 280px;
-    content: attr(data-id);
-    background-position: center;
-  }
-}
-
 .howit__item-desc {
   margin: 0;
 
   @media (min-width: @tablet-width) {
-    line-height: 24px;
+    .font-s-h(16px,24px);
   }
 }

@@ -2,9 +2,8 @@
 .green-line::after,
 .green-line::before {
   border-bottom: 3px solid @basic-green;
-  height: 0.5em;
   position: absolute;
-  top: 4px;
+  top: 14px;
   content: "";
 }
 
@@ -14,9 +13,10 @@
 
 .form-contact .green-line::after {
   width: 6rem;
+  margin-left: 40px;
 
   @media (min-width: @tablet-width) {
-    width: calc(100% / 2);
+    width: 9rem;
   }
 
   @media (min-width: @desktop-width) {
@@ -25,8 +25,10 @@
 }
 
 .form-contact .green-line::before {
-  width: 2rem;
-  left: -70px;
+  @media (min-width: @tablet-width) {
+    width: 2rem;
+    left: -70px;
+  }
 
   @media (min-width: @desktop-width) {
     width: calc(100% / 7);
@@ -39,7 +41,7 @@
   margin-left: 20px;
 
   @media (min-width: @tablet-width) {
-    width: calc(100% / 0.4);
+    width: 31rem;
   }
 
   @media (min-width: @desktop-width) {
@@ -48,6 +50,29 @@
 }
 
 .form-comment .green-line::before {
+  @media (min-width: @tablet-width) {
+    width: 2rem;
+    left: -70px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: calc(100% / 0.7);
+  }
+}
+
+.form-addition .green-line::after {
+  width: 7rem;
+
+  @media (min-width: @tablet-width) {
+    width: 27rem;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: calc(100% / 0.7);
+  }
+}
+
+.form-addition .green-line::before {
   @media (min-width: @tablet-width) {
     width: 2rem;
     left: -70px;
