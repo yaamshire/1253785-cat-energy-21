@@ -1,5 +1,5 @@
 .dillers {
-  background-color: @basic-grey;
+  background-color: #ffffff;
 }
 
 .dillers__wrap {
@@ -15,17 +15,22 @@
 
 .dillers__info {
   z-index: 999;
-  padding: 25px 20px;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 140px auto 140px;
-  background-color: @basic-grey;
+  grid-template-rows: 60px;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ffffff;
+  padding-top: 26px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 25px;
 
   @media (min-width: @tablet-width) {
-    padding: 62px 72px;
-    grid-template-rows: 70px;
-    grid-template-columns: 155px auto 155px;
-    align-items: flex-start;
+    padding: 40px 70px 65px 70px;
+    grid-template-rows: 100px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 0;
+    column-gap: 250px;
   }
 
   @media (min-width: @desktop-width) {
@@ -35,9 +40,9 @@
     grid-row-end: 4;
     align-items: center;
     margin-left: 110px;
-    width: 570px;
+    width: 500px;
     background-color: @white;
-    padding: 70px 90px 62px 78px;
+    padding: 62px 0 62px 68px;
   }
 }
 
@@ -52,7 +57,7 @@
   grid-column-end: 2;
 
   @media (min-width: @tablet-width) {
-    .font-s-h(20px;21px);
+    .font-s-h(20px;22px);
     align-self: center;
   }
 }
@@ -60,11 +65,12 @@
 .dillers__info-subtitle {
   .font-s-h(14px;20px);
   margin: 0;
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-column-end: -1;
 
   @media (min-width: @tablet-width) {
     .font-s-h(16px;20px);
+    text-align: right;
   }
 }
 
