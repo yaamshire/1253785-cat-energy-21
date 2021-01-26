@@ -32,7 +32,7 @@
 
 .promo__header--overlay {
   .oswald();
-  background-image: url("/img/index-background-mobile.png");
+  background-image: url("/img/index/index-background-mobile.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -42,6 +42,10 @@
   background-color: rgba(104, 183, 56, 0.85);
   background-blend-mode: overlay;
   height: 302px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("/img/index/index-background-mobile@2x.png");
+  }
 
   @media (min-width: @tablet-width) {
     display: none;
@@ -55,9 +59,13 @@
     grid-column-start: 3;
     grid-column-end: -1;
     height: auto;
-    background-image: url("/img/index-background-desktop.png");
+    background-image: url("/img/index/index-background-desktop.png");
     margin-right: -30px;
     margin-left: -120px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("/img/index/index-background-desktop@2x.png");
+    }
   }
 }
 
@@ -139,23 +147,35 @@
 }
 
 .promo__image-can {
-  background-image: url("/img/index-can-mobile.png");
+  background-image: url("/img/index/index-can-mobile.png");
   background-repeat: no-repeat;
   background-position: center 20px;
   grid-row: 2;
   grid-column-start: 1;
   grid-column-end: -1;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("/img/index/index-can-mobile@2x.png");
+    background-size: contain;
+    height: 280px;
+  }
+
   @media (min-width: @tablet-width) {
-    background-image: url("/img/index-can-tablet.png");
+    background-image: url("/img/index/index-can-tablet.png");
     grid-column-start: 1;
     grid-column-end: -1;
     grid-row-start: 2;
     grid-row-end: -1;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("/img/index/index-can-tablet@2x.png");
+      height: 610px;
+      background-size: contain;
+    }
   }
 
   @media (min-width: @desktop-width) {
-    background-image: url("/img/index-can.png");
+    background-image: url("/img/index/index-can.png");
     background-size: auto;
     grid-row-start: 2;
     grid-row-end: -1;
@@ -163,6 +183,12 @@
     grid-column-end: -1;
     background-position: 40px 14px;
     padding: 0;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("/img/index/index-can@2x.png");
+      height: 508px;
+      background-size: contain;
+    }
   }
 }
 

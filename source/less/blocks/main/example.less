@@ -17,9 +17,9 @@
 
   @media (min-width: @desktop-width) {
     display: grid;
+    column-gap: 0;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    column-gap: 80px;
+    grid-template-rows: 200px 200px 200px 60px;
   }
 }
 
@@ -36,7 +36,6 @@
 }
 
 .example__header {
-  .debug(@b-color: red;);
   padding-top: 27px;
   margin-bottom: 33px;
 
@@ -49,12 +48,13 @@
 
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
-    grid-column-end: -1;
+    grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 1;
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 110px;
+    align-self: center;
   }
 }
 
@@ -71,8 +71,6 @@
 }
 
 .example__info {
-  .debug(@b-color: green;);
-
   @media (min-width: @tablet-width) {
     display: flex;
     flex-direction: row;
@@ -86,13 +84,14 @@
   @media (min-width: @desktop-width) {
     flex-direction: column;
     grid-column-start: 1;
-    grid-column-end: 1;
+    grid-column-end: -1;
     grid-row-start: 2;
     grid-row-end: -1;
     background-color: @basic-grey;
-    justify-content: space-around;
     margin: 0;
     padding-left: 110px;
+    justify-content: flex-start;
+    padding-top: 70px;
   }
 }
 
@@ -105,7 +104,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    margin: 0;
+    margin: 0 0 70px 0;
     width: 435px;
   }
 }
@@ -123,7 +122,8 @@
 
   @media (min-width: @desktop-width) {
     justify-content: flex-start;
-    margin-bottom: 0;
+    margin-bottom: 60px;
+    gap: 40px;
   }
 }
 
@@ -216,8 +216,7 @@
 }
 
 .example__slider {
-  .debug(@b-color:blue;);
-  background-color: @basic-grey;
+  background-color: transparent;
 
   @media (min-width: @tablet-width) {
     margin-top: 255px;
@@ -225,7 +224,7 @@
 
   @media (min-width: @desktop-width) {
     grid-column-start: 2;
-    grid-column-end: -1;
+    grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: -1;
     margin-top: 0;
@@ -237,6 +236,10 @@
 
   @media (min-width: @tablet-width) {
     height: 340px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: contents;
   }
 }
 
@@ -267,19 +270,28 @@
   }
 
   @media (min-width: @desktop-width) {
-    //background-position: 133px -210px;
-    background-size: cover;
-    background-position: -80px -60px;
+    height: 550px;
     top: 0;
-    left: 0;
+    background-position: -38px 0;
   }
 }
 
 .slider__item--fat-cat {
-  background-image: url("/img/before-mobile.png");
+  background-image: url("/img/index/before-mobile.png");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("/img/index/before-mobile@2x.png");
+    height: 250px;
+    background-size: contain;
+    background-position: 0;
+  }
 
   @media (min-width: @tablet-width) {
-    background-image: url("/img/image_cat_tablet-twins.png");
+    background-image: url("/img/image_cat_tablet-twins.png");/* index/fat-cat.png */
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("/img/image_cat_tablet-twins.png");/* index/fat-cat@2x.png */
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -288,10 +300,21 @@
 }
 
 .slider__item--slim-cat {
-  background-image: url("/img/after-mobile.png");
+  background-image: url("/img/index/after-mobile.png");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("/img/index/after-mobile@2x.png");
+    height: 250px;
+    background-size: contain;
+    background-position: 0;
+  }
 
   @media (min-width: @tablet-width) {
-    background-image: url("/img/cat-skinny.png");
+    background-image: url("/img/cat-skinny.png"); /* index/skinny-cat.png */
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("/img/cat-skinny.png"); /* index/skinny-cat@2x.png */
   }
 }
 
@@ -309,6 +332,7 @@
 
   @media (min-width: @desktop-width) {
     padding: 0;
+    margin-top: 10px;
   }
 }
 
