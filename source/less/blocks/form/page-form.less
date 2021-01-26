@@ -3,15 +3,21 @@
   background-color: #ffffff;
   border-top: 1px solid @grey-2;
 
+  @media (min-width: @tablet-width) {
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (min-width: @desktop-width) {
     padding: 75px 0;
-    border-top: none;
   }
 }
 
 .page-form__intro {
   color: @black;
-  font-family: "Oswald-regular", "Arial", sans-serif;
+  .oswald;
+  font-weight: 200;
   max-width: 260px;
   padding-top: 27px;
   margin-bottom: 36px;
@@ -72,9 +78,10 @@
   }
 
   @media (min-width: @desktop-width) {
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 196px 230px 1fr 180px;
+    grid-template-columns: repeat(4, 245px);
+    grid-template-rows: 200px 230px 1fr 180px;
     column-gap: 80px;
   }
 }
