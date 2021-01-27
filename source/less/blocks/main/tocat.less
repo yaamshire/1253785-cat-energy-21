@@ -3,7 +3,7 @@
   margin-bottom: 24px;
 
   @media (min-width: @tablet-width) {
-    margin-bottom: 54px;
+    margin-bottom: 45px;
   }
 
   @media (min-width: @desktop-width) {
@@ -17,7 +17,7 @@
   row-gap: 20px;
 
   @media (min-width: @tablet-width) {
-    row-gap: 20px;
+    row-gap: 30px;
   }
 
   @media (min-width: @desktop-width) {
@@ -206,50 +206,52 @@
 .catalog-link {
   .font-s-h(16px;16px);
   outline: none;
-  margin-right: 25px;
   text-transform: uppercase;
   font-family: "Oswald-regular", "Arial", sans-serif;
   border: 0;
   background-color: transparent;
   color: @black;
-
-  &:hover {
-    background-color: @grey-1;
-  }
-
-  &:focus {
-    color: fade(@black, 30%);
-  }
+  position: relative;
+  transition: all 1s linear ease 0s;
 
   @media (min-width: @tablet-width) {
     .font-s-h(20px;30px);
   }
 }
 
-
-.arrow {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 7px;
-}
-
-.arrow::before,
-.arrow::after {
-  content: "";
-  display: block;
+.catalog-link::before {
   position: absolute;
-  border: 6px solid transparent;
-}
-
-.arrow:nth-child(2) {
+  content: "";
+  display: inline-block;
   width: 18px;
   height: 2px;
-  background: @black;
+  background-color: black;
+  top: 13px;
+  right: -35px;
 }
 
-.arrow:nth-child(2)::after {
+.catalog-link::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  border: 6px solid transparent;
+  border-left-color: #000000;
   border-width: 6px 0 6px 9px;
-  margin-left: 18px;
-  margin-top: -5px;
-  border-left-color: @black;
+  top: 8px;
+  right: -42px;
+}
+
+.catalog-link:hover::before {
+  width: 26px;
+  right: -43px;
+  transition: all 1s linear ease 0s;
+}
+
+.catalog-link:hover::after {
+  right: -50px;
+  transition: all 1s linear ease 0s;
+}
+
+.catalog-link:active {
+  opacity: 0.3;
 }
