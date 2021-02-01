@@ -12,20 +12,31 @@
     <div class="container">
       <div class="header--wrap">
         <div class="header-logo">
-          <a class="header-logo__image" href="/"><img src="/img/logo-mobile.svg" alt="CAT Energy"></a>
-          <a class="header-logo__name" href="/"><img src="/img/logo-2.svg" alt="CAT ENERGY"></a>
+          <div class="logo-mobile">
+            <a class="header-logo__image" href="/"><img src="/img/logo-mobile.svg" alt="CAT Energy"></a>
+            <a class="header-logo__name" href="/"><img src="/img/logo-2.svg" alt="CAT ENERGY"></a>
+          </div>
+          <div class="logo">
+            <a href="/">
+              <picture>
+                <source media="(min-width:1440px)" srcset="img/logo-desktop.svg">
+                <source media="(min-width:768px)" srcset="img/logo-tablet.svg">
+                <img src="img/logo-mobile.svg" alt="CAT Energy">
+              </picture>
+            </a>
+          </div>
         </div>
         <nav class="main-nav main-nav--closed main-nav--nojs">
           <button class="main-nav__toggle" type="button"><span class="visually-hidden-1"></span></button>
           <div class="main-nav__wrap">
             <ul class="main-nav__list site-list">
-              <li class="site-list__item site-list__item--active">
+              <li class="site-list__item">
                 <a href="/">Главная</a>
               </li>
               <li class="site-list__item">
                 <a href="catalog.html">Каталог продукции</a>
               </li>
-              <li class="site-list__item">
+              <li class="site-list__item site-list__item--active">
                 <a href="form.html">Подборка программы</a>
               </li>
             </ul>
