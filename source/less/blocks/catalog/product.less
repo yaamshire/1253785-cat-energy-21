@@ -38,6 +38,10 @@
     width: 100%;
     background-color: transparent;
   }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 16px;
+  }
 }
 
 
@@ -64,6 +68,7 @@
   text-align: left;
   margin-top: 20px;
   margin-bottom: 10px;
+  width: 80px;
 
   @media (min-width: @tablet-width) {
     padding-right: 0;
@@ -164,11 +169,12 @@
     margin-top: 0;
     background-color: transparent;
     border: 2px solid @grey-2;
-    padding-top: 52px;
+    justify-content: space-between;
   }
 
   @media (min-width: @desktop-width) {
-    padding-top: 49px;
+    padding-top: 68px;
+    justify-content: space-between;
   }
 }
 
@@ -178,8 +184,14 @@
   width: 100%;
 
   @media (min-width: @tablet-width) {
-    margin-bottom: 49px;
-    height: 60px;
+    padding-bottom: 0;
+    padding-left: 26px;
+    margin-top: 70px;
+    margin-bottom: -20px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
   }
 }
 
@@ -197,12 +209,10 @@
 
   @media (min-width: @tablet-width) {
     width: 60px;
-    top: 50px;
-    left: 50px;
   }
 
   @media (min-width: @desktop-width) {
-    top: 50px;
+    top: 10px;
     left: 50px;
   }
 }
@@ -223,7 +233,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    top: 50px;
+    top: 10px;
     left: 50px;
   }
 }
@@ -233,7 +243,11 @@
   .font-s-h(16px;20px);
   font-weight: 200;
   color: @dark-grey-2;
+  text-transform: uppercase;
   margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
 
   @media (min-width: @tablet-width) {
     .font-s-h(20px;22px);
@@ -261,7 +275,7 @@
   }
 }
 
-.show-more__button .grey-button {
+.product__button .grey-button {
   height: 40px;
 
   @media (min-width: @tablet-width) {
@@ -271,5 +285,21 @@
   @media (min-width: @desktop-width) {
     width: 168px;
     padding: 0;
+  }
+}
+
+.show-more .product__info {
+  @media (min-width: @tablet-width) {
+    align-self: center;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 53px;
+  }
+}
+
+.show-more .product__button {
+  @media (min-width: @tablet-width) {
+    align-self: center;
   }
 }

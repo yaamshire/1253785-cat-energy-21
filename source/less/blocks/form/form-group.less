@@ -205,13 +205,22 @@ input.form-group__input--text {
   content: "";
 }
 
+.form-contact,
+.form-comment,
+.form-addition,
+.page-form__footer {
+  margin-top: 24px;
+
+  @media (min-width: @desktop-width) {
+    margin-top: 70px;
+  }
+}
+
 /* Группа инпутов контактные данные  */
 .form-contact {
   border-left: none;
   border-right: none;
   border-bottom: none;
-  padding-top: 24px;
-  padding-bottom: 26px;
 
   @media (min-width: @tablet-width) {
     padding: 0;
@@ -221,7 +230,6 @@ input.form-group__input--text {
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
-    padding-top: 75px;
   }
 }
 
@@ -289,7 +297,7 @@ svg path {
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
-    padding: 75px 0;
+    margin-bottom: 0;
   }
 }
 
@@ -337,11 +345,11 @@ svg path {
     margin-bottom: 50px;
   }
 
-
   @media (min-width: @desktop-width) {
     grid-column-start: 1;
     grid-column-end: -1;
-    padding-bottom: 60px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -370,7 +378,8 @@ svg path {
   }
 
   @media (min-width: @desktop-width) {
-    display: flex;
+    grid-template-columns: repeat(4, 245px);
+    column-gap: 80px;
   }
 }
 
@@ -379,6 +388,10 @@ svg path {
 
   @media (min-width: @tablet-width) {
     margin-bottom: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 53px;
   }
 }
 
@@ -470,7 +483,7 @@ svg path {
 .page-form__footer {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 37px;
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
@@ -485,6 +498,8 @@ svg path {
     grid-column-end: -1;
     column-gap: 80px;
     padding: 0;
+    margin-top: 80px;
+    margin-bottom: 0;
   }
 }
 
@@ -501,6 +516,17 @@ svg path {
   }
 }
 
+.page-form__footer-submit .green-button {
+  @media (min-width: @tablet-width) {
+    height: 52px;
+  }
+
+  @media (min-width: @desktop-width) {
+    height: 52px;
+    width: 100%;
+  }
+}
+
 .footer-submit {
   .font-s-h(16px;20px);
 
@@ -513,6 +539,7 @@ svg path {
 
 .page-form__footer-legend {
   align-self: center;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
     margin: 0;

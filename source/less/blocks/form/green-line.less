@@ -3,8 +3,16 @@
 .green-line::before {
   border-bottom: 3px solid @basic-green;
   position: absolute;
-  top: 14px;
+  top: 12px;
   content: "";
+
+  @media (min-width: @tablet-width) {
+    top: 23px;
+  }
+
+  @media (min-width: @desktop-width) {
+    top: 18px;
+  }
 }
 
 .green-line::after {
@@ -88,6 +96,7 @@
 
 .additional__title .green-line::after {
   width: 53px;
+  margin-left: 22px;
 
   @media (min-width: @tablet-width) {
     width: 328px;
@@ -100,5 +109,9 @@
 
 .additional__title .green-line::after,
 .additional__title .green-line::before {
-  top: 30px;
+  top: 18px;
+
+  @media (min-width: @tablet-width) {
+    top: 30px;
+  }
 }
